@@ -40,12 +40,12 @@ function draw(){
     fill('#FF0000');
     stroke('#FF0000');
     circle(lefthandWristx, lefthandWristy, 20);
-    in_number_leftHandWristY=Nmuber(lefthandWristy);
+    in_number_leftHandWristY=Number(lefthandWristy);
     removeDecimalsy=floor(in_number_leftHandWristY);
     volume=removeDecimalsy/500;
     document.getElementById("volume").innerHTML="volume : "+volume;
     song.setVolume(volume);
-    
+
     in_number_leftHandWristx=Nmuber(lefthandWristx);
     removeDecimalsx=floor(in_number_leftHandWristx);
 
