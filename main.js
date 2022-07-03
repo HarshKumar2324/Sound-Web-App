@@ -1,3 +1,8 @@
+lefthandWristx=0;
+lefthandWristy=0;
+righthandWristx=0;
+righthandWristy=0;
+
 song="";
 
 function preload(){
@@ -20,11 +25,20 @@ function modelloaded(){
 function gotposes(results){
 if(results.length>0){
     console.log(results);
+    lefthandWristx=results[0].pose.leftWrist.x;
+    lefthandWristy=results[0].pose.leftWrist.y;
+    righthandWristx=results[0].pose.rightWrist.x;
+    righthandWristy=results[0].pose.rightWrist.y;
+    console.log("lefthandWristx : "+ lefthandWristx+"  lefthandWristy : "+lefthandWristy);
+    console.log("righthandWristx : "+righthandWristx+" righthandWristy : "+righthandWristy);  
 }
 }
 
 function draw(){
     image(video, 0, 0, 600, 500);
+    fill('#FF0000');
+    stroke('#FF0000');
+    circle(lefthandWristx, lefthandWristy, 20);
 }
 
 function play(){
